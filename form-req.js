@@ -42,8 +42,10 @@ contactForm.addEventListener("submit", (e) => {
 		});
 });
 
-// get data start
-// let locationData = {};
+// get data
+
+let locationData = {};
+
 let currentdate = new Date();
 let datetime = "VisitTime: " + currentdate.getDate() + "/"
   + (currentdate.getMonth() + 1) + "/"
@@ -51,7 +53,48 @@ let datetime = "VisitTime: " + currentdate.getDate() + "/"
   + currentdate.getHours() + ":"
   + currentdate.getMinutes() + " min"
 
-  //vars for local storage
+  //get location func
+// function YesYesYes() {
+// 	fetch("get.php", {
+// 		method: "POST",
+// 		headers: {
+// 			"Content-Type": "application/x-www-form-urlencoded",
+// 		},
+// 	})
+// 		.then((response) => response.text())
+// 		.then((text) => {
+// 			try {
+// 				const data = JSON.parse(text);
+// 				console.log(data);
+// 				locationData = data;
+
+// 				if (locationData && locationData.countryCode) {
+// 					let message = `${datetime}\nIP: ${locationData.ip}\nCountry: ${locationData.countryCode}\nCity: ${locationData.city}\nRegionName: ${locationData.regionName}`;
+// 					axios
+// 						.post(URI_API, {
+// 							chat_id: CHAT_ID,
+// 							parse_mode: "html",
+// 							text: message,
+// 						})
+// 						.then((res) => {
+// 							console.log("All good!");
+// 						})
+// 						.catch((err) => {
+// 							console.log(err);
+// 						});
+// 				} else {
+// 					console.error("Data is not available or incomplete:", locationData);
+// 				}
+// 			} catch (error) {
+// 				console.error("Failed to parse JSON:", error, "Response:", text);
+// 			}
+// 		})
+// 		.catch((error) => console.error("Error:", error));
+//}
+
+// vars for local storage
+  //get location func end
+
 const SCRIPT_EXECUTION_KEY = "scriptExecuted";
 const TIMESTAMP_KEY = "scriptExecutionTimestamp";
 const EXPIRY_TIME = 2 * 60 * 1000; // 2 minutes in milliseconds
