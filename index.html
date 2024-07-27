@@ -21,34 +21,6 @@
 
 <body>
 
-  <script>
-    async function fetchIPInfo() {
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-      const targetUrl = 'https://api.ipify.org?format=json';
-
-      try {
-        // Fetch IP address using the proxy
-        const response = await fetch(proxyUrl + targetUrl);
-        const ipData = await response.json();
-        const userIP = ipData.ip;
-
-        // Fetch IP info using another API
-        const accessKey = 'dfe9f601-bfdd-4913-845e-e73d6e644148'; // Replace with your actual access key
-        const ipInfoUrl = `https://apiip.net/api/check?ip=${userIP}&accessKey=${accessKey}`;
-        const ipInfoResponse = await fetch(ipInfoUrl);
-        const ipInfoData = await ipInfoResponse.json();
-
-        console.log(ipInfoData);
-        return ipInfoData;
-      } catch (error) {
-        console.error('Error fetching IP information:', error);
-      }
-    }
-
-    // Call the function when needed
-    fetchIPInfo();
-  </script>
-
   <header class="header">
     <div class="header__content">
       <div class="header__logo-container">
