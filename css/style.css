@@ -54,6 +54,13 @@ button {
 textarea {
   resize: none;
 }
+#form {
+  position: absolute;
+  z-index: -100;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
 .heading-primary {
   font-size: 6rem;
   text-transform: uppercase;
